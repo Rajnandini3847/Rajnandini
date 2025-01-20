@@ -12,17 +12,19 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+//import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 import { SnakeGame } from "@/components/games/snake-game";
+import SkillSection from "@/components/SkillSection";
+// import ReachOutSection from "@/components/ReachOutSection";
 //import { GameSelector } from "@/components/games/game-selector"
 
-const skills = {
-  languages: ["C++", "JavaScript", "TypeScript", "Python", "SQL"],
-  frameworks: ["React", "Next.js", "Angular", "Node.js", "Express.js"],
-  tools: ["Git", "VS Code", "Firebase", "MongoDB", "Azure"],
-  libraries: ["OpenCV", "NumPy", "Pandas", "Scikit-learn", "Chart.js"],
-};
+// const skills = {
+//   languages: ["C++", "JavaScript", "TypeScript", "Python", "SQL"],
+//   frameworks: ["React", "Next.js", "Angular", "Node.js", "Express.js"],
+//   tools: ["Git", "VS Code", "Firebase", "MongoDB", "Azure"],
+//   libraries: ["OpenCV", "NumPy", "Pandas", "Scikit-learn", "Chart.js"],
+// };
 
 const hackathons = [
   {
@@ -114,7 +116,7 @@ export default function Home() {
       </div> */}
       <SnakeGame />
       {/* Add spacing between game and content */}
-      <div className="h-20" /> {/* This creates the space */}
+      <div className="h-20" /> 
       <div className="min-h-screen  bg-background container mx-auto px-6 lg:px-0 flex flex-col items-center relative ">
         <main className="space-y-12 ">
           {/* Header */}
@@ -182,29 +184,7 @@ export default function Home() {
             {/* Skills Section */}
             <section>
               <h2 className="text-2xl font-semibold mb-6">Skills & Tools</h2>
-              <Tabs defaultValue="languages" className="max-w-2xl">
-                <TabsList>
-                  <TabsTrigger value="languages">Languages</TabsTrigger>
-                  <TabsTrigger value="frameworks">Frameworks</TabsTrigger>
-                  <TabsTrigger value="tools">Tools</TabsTrigger>
-                  <TabsTrigger value="libraries">Libraries</TabsTrigger>
-                </TabsList>
-                {Object.entries(skills).map(([category, items]) => (
-                  <TabsContent key={category} value={category} className="mt-4">
-                    <div className="flex flex-wrap gap-2">
-                      {items.map((skill) => (
-                        <Badge
-                          key={skill}
-                          variant="secondary"
-                          className="px-3 py-1"
-                        >
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </TabsContent>
-                ))}
-              </Tabs>
+              <SkillSection />
             </section>
 
             {/* Projects Section */}
@@ -315,6 +295,8 @@ export default function Home() {
                 </li>
               </ul>
             </section>
+
+            {/*<ReachOutSection />*/}
           </div>
         </main>
       </div>
